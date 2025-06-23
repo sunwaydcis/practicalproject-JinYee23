@@ -1,7 +1,7 @@
 
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
-ThisBuild / scalaVersion := "3.3.4"
+ThisBuild / scalaVersion := "3.3.6"
 
 lazy val root = (project in file("."))
   .settings(
@@ -17,9 +17,9 @@ lazy val root = (project in file("."))
         case _                            => throw new Exception("Unknown platform!")
       }
       Seq("base", "controls", "fxml", "graphics", "media", "swing", "web")
-        .map(m => "org.openjfx" % s"javafx-$m" % "21.0.4" classifier osName)
+        .map(m => "org.openjfx" % s"javafx-$m" % "23.0.1" classifier osName)
     },
-    libraryDependencies ++= Seq("org.scalafx" %% "scalafx" % "21.0.0-R32")
+    libraryDependencies ++= Seq("org.scalafx" %% "scalafx" % "23.0.1-R34")
   )
 //enable for sbt-assembly
 //assembly / assemblyMergeStrategy := {
